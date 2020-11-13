@@ -11,7 +11,134 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 
 /* === Navbar === */
+.nav__container {
+    width: 85%;
+    max-width: 85em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav {
+    padding: 20px 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+}
+
+.nav__logo {
+    color: #2b2b2b;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+}
+
+.nav__list {
+    display: flex;
+}
+
+.nav__item {
+    margin: 0 20px 0 0 ;
+}
+
+.nav__link {
+    color: #141414;
+}
+
+.bars {
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    border: 2px solid #332e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    display: none;
+}
+
+.bars__burger {
+    width: 25px;
+    height: 4px;
+    background:  #332e2e;
+    border-radius: 5px;
+}
+
+.bars__burger::before,
+.bars__burger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 4px;
+    background:  #332e2e;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.bars__burger::before {
+    transform: translateY(-10px);
+}
+
+.bars__burger::after {
+    transform: translateY(10px);
+}
+
+.bars.open .bars__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.bars.open .bars__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.bars.open .bars__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+} 
+
+
+
+/* === Responsividade === */
+@media(max-width: 900px) {
+    .bars {
+        display: flex;
+    }
+
+    .nav__list {
+        display: none;
+    }
+
+    .mobile__menu {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(184, 184, 184, 1.99999);
+        opacity: 9;
+        position: fixed;
+        z-index: -99;
+        transition: all linear 0.3s;
+    }
+
+    .hidden {
+        top: -100%;
+    }
+
+    .active {
+        top: 0;   
+    }
+}
+
+
