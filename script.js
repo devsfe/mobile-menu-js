@@ -21,10 +21,10 @@ function btnAnimation(){
     }
 }
 
+
+//Criar menu mobile
 var mobileMenu = document.createElement('div');
     mobileMenu.className = 'mobile__menu';
-
-
 
     body.insertBefore(mobileMenu, container);
 
