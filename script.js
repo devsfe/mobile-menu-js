@@ -14,7 +14,7 @@ menuBtn.addEventListener('click', menuMobile);
 
 //Animação menu bars
 function btnAnimation(){
-    if (!menuOpen) {
+    if (menuOpen == false) {
         menuBtn.classList.add('open');
         menuOpen = true;
     } else {
@@ -34,21 +34,31 @@ var mobileMenu = document.createElement('div');
     var menuList = document.createElement('ul');
     menuList.className = 'menu__list';
     mobileMenu.appendChild(menuList);
-    var linksArray = ["Home", "Sobre", "Empresa", "Portfolio", "Contato"]
+    var linksArray = ["Home", "Sobre", "Empresa", "Portfolio", "Contato"];
 
     for (var i = 0; i < linksArray.length; i++) {
         var menuItem = document.createElement('li');
         menuItem.className = 'menu__item';
         menuList.appendChild(menuItem);
+
         var menuLink = document.createElement('a');
         menuLink.className = 'menu__link'
-        menuLink.href;
+        menuLink.setAttribute('href', '#');
         menuItem.appendChild(menuLink);
+        
         var menuText = document.createTextNode(linksArray[i]);
         menuLink.appendChild(menuText);
+
+        menuLink.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('active');
+        }
+        
     }
 
-    
+
 //Abrir menu mobile
 function menuMobile(){
     if(menuOpen == true){
@@ -60,4 +70,9 @@ function menuMobile(){
         mobileMenu.classList.remove('active');
         logo.style.display = 'block';
     }
+
+    console.log(menuOpen);
 }
+
+
+

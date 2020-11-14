@@ -72,7 +72,7 @@ body {
 }
 
 .bars__burger {
-    width: 25px;
+    width: 22px;
     height: 3px;
     background:  #332e2e;
     border-radius: 5px;
@@ -82,7 +82,7 @@ body {
 .bars__burger::after {
     content: '';
     position: absolute;
-    width: 25px;
+    width: 22px;
     height: 3px;
     background:  #332e2e;
     border-radius: 5px;
@@ -90,11 +90,11 @@ body {
 }
 
 .bars__burger::before {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 }
 
 .bars__burger::after {
-    transform: translateY(8px);
+    transform: translateY(7px);
 }
 
 .bars.open .bars__burger {
@@ -110,6 +110,10 @@ body {
 .bars.open .bars__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
 } 
+
+.menu__link {
+    display: none;
+}
 
 
 
@@ -134,6 +138,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .menu__link {
+        line-height: 7ch;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        color: #332e2e;
+        display: block;
     }
 
     .hidden {
