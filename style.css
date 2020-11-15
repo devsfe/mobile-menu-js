@@ -25,11 +25,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .nav {
-    padding: 20px 0;
+    padding: 1.25em 0;
     position: sticky;
     width: 100%;
     top: 0;
@@ -39,7 +38,7 @@ body {
 
 .nav__logo {
     color: #2b2b2b;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1ch;
 }
@@ -49,7 +48,7 @@ body {
 }
 
 .nav__item {
-    margin: 0 20px 0 0 ;
+    margin: 0 1.25em 0 0 ;
 }
 
 .nav__link {
@@ -61,7 +60,6 @@ body {
     height: 35px;
     cursor: pointer;
     transition: all .3s ease-in-out;
-    
     display: flex;
     justify-content: center;
     align-items: center;

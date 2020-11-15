@@ -4,24 +4,11 @@ var menuOpen = false;
 var navList = document.querySelector('.nav__list');
 var body = document.querySelector('body');
 var container = document.querySelector('.container');
-var logo = document.querySelector('.nav__logo')
+var logo = document.querySelector('.nav__logo');
 
 //Eventos
 menuBtn.addEventListener('click', btnAnimation);
 menuBtn.addEventListener('click', menuMobile);
-
-
-
-//Animação menu bars
-function btnAnimation(){
-    if (menuOpen == false) {
-        menuBtn.classList.add('open');
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove('open');
-        menuOpen = false;
-    }
-}
 
 
 //Criando menu mobile
@@ -54,9 +41,23 @@ var mobileMenu = document.createElement('div');
         function closeMenu() {
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('active');
+            menuBtn.classList.remove('open');
+            logo.style.display = 'block';
+
+            menuOpen = false;
         }
-        
     }
+
+//Animação menu bars
+function btnAnimation(){
+    if (menuOpen == false) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+    }
+};
 
 
 //Abrir menu mobile
@@ -70,9 +71,9 @@ function menuMobile(){
         mobileMenu.classList.remove('active');
         logo.style.display = 'block';
     }
+};
 
-    console.log(menuOpen);
-}
+
 
 
 
