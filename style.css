@@ -11,9 +11,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
 }
 
 
@@ -29,7 +26,7 @@ body {
 
 .nav {
     padding: 1.25em 0;
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
@@ -113,7 +110,18 @@ body {
     display: none;
 }
 
+.copy {
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    font-size: 0.875rem;
+    color: #121212;
+}
 
+.github-icon,
+.github-link     {
+    color: #a80081;
+}
 
 /* === Responsividade === */
 @media(max-width: 900px) {
@@ -153,6 +161,14 @@ body {
     .active {
         top: 0;   
     }
+}
+
+@media(max-width: 1100px) {
+    .copy {
+        left: 0;
+        right: 0;
+        text-align: center;
+    }    
 }
 
 
